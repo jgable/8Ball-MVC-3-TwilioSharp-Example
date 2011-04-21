@@ -64,34 +64,18 @@ namespace _8Ball.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult New(string SmsSid,
-        // string AccountSid,
-        // string From,
-        // string To,
-        // string Body,
-        // string FromCity,
-        // string FromState,
-        // string FromZip,
-        // string FromCountry,
-        // string ToCity,
-        // string ToState,
-        // string ToZip,
-        // string ToCountry)
-        //{
-        //    return new ReplySMSAction(Magic8BallAnswerer.GetAnswer());
-        //}
-
         public ActionResult Answer()
         {
-            return new ReplySMSResult(Magic8BallAnswerer.GetAnswer());
+            return Json(new { answer = Magic8BallAnswerer.GetAnswer() });
         }
 
         [HttpPost]
         public ActionResult New(TwilioTextRequest request)
         {
-            var msg = request == null ? "null req" : request.From == null ? "null from" : request.From + ", " + request.FromCity;
-            return new ReplySMSResult(Magic8BallAnswerer.GetAnswer() + " - " + msg);
+            //var msg = request == null ? "null req" : request.From == null ? "null from" : request.From + ", " + request.FromCity;
+            //return new ReplySMSResult(Magic8BallAnswerer.GetAnswer() + " - " + msg);
+
+            return new ReplySMSResult("The Magical 8-Ball Says: " + Magic8BallAnswerer.GetAnswer());
         }
 
     }
