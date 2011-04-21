@@ -1,0 +1,14 @@
+﻿
+Yo!  Welcome to your new kick-ass HTML5 Boilerplate MVC App.
+
+MotherEffin TODO:
+
+1.  Make an awesome site using HTML5 and CSS3
+2.  Update the humans.txt file to let other humans know about you.
+3.  Set up google analytics and uncomment the google analytics tracking in _Layout.cshtml.
+4.  Remove this file so no one can see your super secret todo list.
+
+The source for this template can be found at https://bitbucket.org/jacob4u2/mothereffin-html5-site.
+Based on the original HTML5 Boilerplate template; more info available at http://html5boilerplate.com.
+
+Feedback is welcomed with warm hearts and loving arms at jacob.gable[at]gmail.com, or you can log issues at the butbucket project site.
