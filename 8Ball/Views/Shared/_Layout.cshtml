@@ -16,7 +16,7 @@
   <meta name="author" content="">
   
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=0.6">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
@@ -52,17 +52,7 @@
             <div id="title">
                 <h1>The All Knowing Magical 8-Ball</h1>
             </div>
-
-            <div id="logindisplay" style="visibility: hidden">
-                @Html.Partial("_LogOnPartial")
-            </div>
-
-            <div id="menucontainer">
-                <ul id="menu" style="visibility: hidden">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
-            </div>
+            <div class="clearfix clearboth"></div>
         </header>
 
         <div id="main" role="main">

@@ -100,7 +100,7 @@ page width. Or, you can specify an exact pixel width. */
     color: #fff;
     border: none;
     line-height: 2em;
-    font-size: 42px !important;
+    font-size: 36px !important;
 }
 
 #main
@@ -340,8 +340,10 @@ div#title
     width: 6em;
 }
 
+.clearboth { clear: both; }
+
 #container 
 {
     margin: 0 auto;
-    width: 800px;    
+    max-width: 500px;    
 }
