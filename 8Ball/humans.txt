@@ -3,10 +3,10 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site: 
-  Twitter: 
-  Location: 
+  Developer: Jacob Gable
+  Site: http://8ball.apphb.com
+  Twitter: @jacob4u2
+  Location: Chicago, IL
 
 /* THANKS */
   Names (& URL): 
@@ -14,7 +14,7 @@
 /* SITE */
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery
-  Software:
+  Framework: .Net MVC 3
   
 
                                     

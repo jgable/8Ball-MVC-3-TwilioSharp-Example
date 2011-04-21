@@ -72,6 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="css\site.css" />
     <Content Include="humans.txt" />
+    <Content Include="img\darkbg.png" />
     <Content Include="js\libs\jquery-1.5.1.js" />
     <Content Include="js\libs\jquery-1.5.1.min.js" />
     <Content Include="js\libs\jquery.unobtrusive-ajax.js" />
@@ -173,7 +174,4 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <ItemGroup>
-    <Content Include="welcome.txt" />
-  </ItemGroup>
 </Project>

@@ -16,7 +16,7 @@
   <meta name="author" content="">
   
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, minimum-scale=0.7, maximum-scale-0.7">
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
@@ -25,6 +25,14 @@
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="@Url.Content("~/css/style.css?v=2")">
   <link rel="stylesheet" href="@Url.Content("~/css/site.css?v=1")">
+
+  <!-- Google Font Link -->
+  <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+
+  <style type="text/css">
+    .bodyBg { background-image: url('@Url.Content("~/img/darkbg.png")'); }
+    #title h1 { font-family: 'Bangers', arial, serif; }
+  </style>
 
 
   <!-- Uncomment if you are specifically targeting less enabled mobile browsers
@@ -37,7 +45,7 @@
 
 </head>
 
-<body>
+<body class="bodyBg">
 
   <div id="container">
         <header id="header">
@@ -45,16 +53,15 @@
                 <h1>The All Knowing Magical 8-Ball</h1>
             </div>
 
-            <div id="logindisplay">
+            <div id="logindisplay" style="visibility: hidden">
                 @Html.Partial("_LogOnPartial")
             </div>
 
             <div id="menucontainer">
-                <ul id="menu">
+                <ul id="menu" style="visibility: hidden">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
-
             </div>
         </header>
 
@@ -63,6 +70,7 @@
         </div>
 
         <footer id="footer">
+            <center>Created by <a href="http://jacob4u2.posterous.com">Jacob Gable</a></center>
         </footer>    
   </div> <!--! end of #container -->
 

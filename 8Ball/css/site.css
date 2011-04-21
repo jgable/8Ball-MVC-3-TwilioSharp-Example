@@ -1,11 +1,11 @@
 ﻿/*----------------------------------------------------------
-The base color for this template is #5c87b2. If you'd like
+The base color for this template is #121212. If you'd like
 to use a different color start by replacing all instances of
-#5c87b2 with your new color.
+#121212 with your new color.
 ----------------------------------------------------------*/
 body
 {
-    background-color: #5c87b2;
+    background-color: #121212;
     color: #696969;
 }
 
@@ -108,7 +108,7 @@ page width. Or, you can specify an exact pixel width. */
     padding: 30px 30px 15px 30px;
     background-color: #fff;
     margin-bottom: 30px;
-    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */    
 }
 
 #footer
@@ -125,7 +125,7 @@ page width. Or, you can specify an exact pixel width. */
 ----------------------------------------------------------*/
 ul#menu
 {
-    border-bottom: 1px #5C87B2 solid;
+    border-bottom: 1px #121212 solid;
     padding: 0 0 2px;
     position: relative;
     margin: 0;
@@ -338,4 +338,10 @@ div#title
 .tri-state
 {
     width: 6em;
+}
+
+#container 
+{
+    margin: 0 auto;
+    width: 800px;    
 }
