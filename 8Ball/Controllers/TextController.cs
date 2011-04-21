@@ -7,7 +7,7 @@ using _8Ball.Common;
 
 namespace _8Ball.Controllers
 {
-    public class TwilioRequest
+    public class TwilioTextRequest
     {
         public string SmsSid { get; set; }
         public string AccountSid { get; set; }
@@ -84,14 +84,14 @@ namespace _8Ball.Controllers
 
         public ActionResult Answer()
         {
-            return new ReplySMSAction(Magic8BallAnswerer.GetAnswer());
+            return new ReplySMSResult(Magic8BallAnswerer.GetAnswer());
         }
 
         [HttpPost]
-        public ActionResult New(TwilioRequest request)
+        public ActionResult New(TwilioTextRequest request)
         {
             var msg = request == null ? "null req" : request.From == null ? "null from" : request.From + ", " + request.FromCity;
-            return new ReplySMSAction(Magic8BallAnswerer.GetAnswer() + " - " + msg);
+            return new ReplySMSResult(Magic8BallAnswerer.GetAnswer() + " - " + msg);
         }
 
     }
