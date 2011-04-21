@@ -64,34 +64,35 @@ namespace _8Ball.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult New(string SmsSid,
-         string AccountSid,
-         string From,
-         string To,
-         string Body,
-         string FromCity,
-         string FromState,
-         string FromZip,
-         string FromCountry,
-         string ToCity,
-         string ToState,
-         string ToZip,
-         string ToCountry)
-        {
-            return new ReplySMSAction(Magic8BallAnswerer.GetAnswer());
-        }
+        //[HttpPost]
+        //public ActionResult New(string SmsSid,
+        // string AccountSid,
+        // string From,
+        // string To,
+        // string Body,
+        // string FromCity,
+        // string FromState,
+        // string FromZip,
+        // string FromCountry,
+        // string ToCity,
+        // string ToState,
+        // string ToZip,
+        // string ToCountry)
+        //{
+        //    return new ReplySMSAction(Magic8BallAnswerer.GetAnswer());
+        //}
 
         public ActionResult Answer()
         {
             return new ReplySMSAction(Magic8BallAnswerer.GetAnswer());
         }
-       
-        //[HttpPost]
-        //public ActionResult New(TwilioRequest request)
-        //{
-        //    return View();
-        //}
+
+        [HttpPost]
+        public ActionResult New(TwilioRequest request)
+        {
+            var msg = request == null ? "null req" : request.From == null ? "null from" : request.From + ", " + request.FromCity;
+            return new ReplySMSAction(Magic8BallAnswerer.GetAnswer() + " - " + msg);
+        }
 
     }
 }
