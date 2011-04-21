@@ -99,8 +99,8 @@ page width. Or, you can specify an exact pixel width. */
     margin: 0;
     color: #fff;
     border: none;
-    line-height: 2em;
-    font-size: 36px !important;
+    line-height: 1.5em;
+    font-size: 26px !important;
 }
 
 #main
