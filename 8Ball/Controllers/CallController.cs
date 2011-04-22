@@ -31,7 +31,7 @@ namespace _8Ball.Controllers
                                         .Pause(3)                                        
                                         .GatherWhileSaying("Press Any Key To Ask Another Question.  Or Pound to Exit.", 
                                             actionUrl: Url.Action("New"),
-                                            timeoutSeconds: 15)
+                                            timeoutSeconds: 7)
                                         .Gather()
                                         .Say("Goodbye")
                                         .Hangup());
