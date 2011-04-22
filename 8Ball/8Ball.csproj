@@ -60,7 +60,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\TwilioResponse.cs" />
+    <Compile Include="Common\Magic8BallAnswerizer3000.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CallController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -143,6 +143,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="js\mylibs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TwilioSharp.MVC3\TwilioSharp.MVC3.csproj">
+      <Project>{21DC5F26-B86F-4442-9B2E-1EACFA5CC4C2}</Project>
+      <Name>TwilioSharp.MVC3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TwilioSharp\TwilioSharp.csproj">
+      <Project>{B800211F-B78A-4743-8F87-D60C7CEBD0A9}</Project>
+      <Name>TwilioSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

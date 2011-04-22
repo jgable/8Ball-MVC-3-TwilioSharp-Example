@@ -4,42 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using _8Ball.Common;
+using TwilioSharp.Request;
+using TwilioSharp.MVC3.Controllers;
 
 namespace _8Ball.Controllers
 {
-    public class TwilioCallRequest
-    {
-        public string CallSid { get; set; }
-        public string AccountSid { get; set; }
-        public string From { get; set; }
-        public string To { get; set; }
-        public string CallStatus { get; set; }
-        public string ApiVersion { get; set; }
-        public string Direction { get; set; }
-        public string ForwardedFrom { get; set; }
-
-        public string FromCity { get; set; }
-        public string FromState { get; set; }
-        public string FromZip { get; set; }
-        public string FromCountry { get; set; }
-        public string ToCity { get; set; }
-        public string ToState { get; set; }
-        public string ToZip { get; set; }
-        public string ToCountry { get; set; }
-    }
-
-    public class CallController : Controller
+    public class CallController : TwiMLController
     {
         [HttpPost]
-        public ActionResult New(TwilioCallRequest request)
+        public ActionResult New(CallRequest request)
         {
-            return new AskForQuestionResult();
+            return TwiML(response => response
+                                        .Say("Thanks for calling the All Knowing Magical 8 Ball.")
+                                        .Say("Ask a Question after the Beep.")
+                                        .Say("Press Pound when done.")
+                                        .Record(Url.Action("Question")));
         }
 
         [HttpPost]
-        public ActionResult Question(TwilioCallRequest request)
+        public ActionResult Question(CallRecordRequest request)
         {
-            return new AnswerQuestionResult("The Magical 8 Ball Says. " + Magic8BallAnswerer.GetAnswer());
+            var answer = "The Magical 8 Ball Says. " + Magic8BallAnswerizer3000.GetAnswer();
+
+            return TwiML(response => response
+                                        .Say(answer)
+                                        .Pause(3)                                        
+                                        .GatherWhileSaying("Press Pound To Ask Another Question", actionUrl: Url.Action("New"))
+                                        .Say("Goodbye")
+                                        .Hangup());
         }
     }
 }
