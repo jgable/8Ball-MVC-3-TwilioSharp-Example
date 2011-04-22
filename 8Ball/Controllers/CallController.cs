@@ -29,7 +29,10 @@ namespace _8Ball.Controllers
             return TwiML(response => response
                                         .Say(answer)
                                         .Pause(3)                                        
-                                        .GatherWhileSaying("Press Pound To Ask Another Question", actionUrl: Url.Action("New"))
+                                        .GatherWhileSaying("Press Any Key To Ask Another Question.  Or Pound to Exit.", 
+                                            actionUrl: Url.Action("New"),
+                                            timeoutSeconds: 15)
+                                        .Gather()
                                         .Say("Goodbye")
                                         .Hangup());
         }
