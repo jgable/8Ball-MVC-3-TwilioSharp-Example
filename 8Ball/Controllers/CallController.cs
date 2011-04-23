@@ -24,15 +24,13 @@ namespace _8Ball.Controllers
         [HttpPost]
         public ActionResult Question(CallRecordRequest request)
         {
-            var answer = "The Magical 8 Ball Says. " + Magic8BallAnswerizer3000.GetAnswer();
-
             return TwiML(response => response
-                                        .Say(answer)
-                                        .Pause(3)                                        
+                                        .Say("The Magical 8 Ball Says")
+                                        .Say(Magic8BallAnswerizer3000.GetAnswer())
+                                        .Pause(1)                                        
                                         .GatherWhileSaying("Press Any Key To Ask Another Question.  Or Pound to Exit.", 
                                             actionUrl: Url.Action("New"),
-                                            timeoutSeconds: 7)
-                                        .Gather()
+                                            timeoutSeconds: 3)
                                         .Say("Goodbye")
                                         .Hangup());
         }
