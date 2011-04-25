@@ -30,8 +30,6 @@ namespace TwilioSharp.Request
 
     public class CallRequest : RequestBase
     {
-        public string CallStatus { get; set; }
-        public string ApiVersion { get; set; }
         public string Direction { get; set; }
         public string ForwardedFrom { get; set; }
     }
