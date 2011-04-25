@@ -45,7 +45,7 @@
     <Compile Include="Controllers\TwiMLController.cs" />
     <Compile Include="Controllers\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Results\TwilioResult.cs" />
+    <Compile Include="Results\TwiMLResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TwilioSharp\TwilioSharp.csproj">

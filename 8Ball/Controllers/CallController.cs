@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using _8Ball.Common;
-using TwilioSharp.Request;
-using TwilioSharp.MVC3.Controllers;
+﻿
 
 namespace _8Ball.Controllers
 {
+    using System.Web.Mvc;
+    using _8Ball.Common;
+    using TwilioSharp.MVC3.Controllers;
+    using TwilioSharp.Request;
+
     public class CallController : TwiMLController
     {
         [HttpPost]
